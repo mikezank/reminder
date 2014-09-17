@@ -1,7 +1,7 @@
 =begin
 ** Form generated from reading ui file 'remaddchange.ui'
 **
-** Created: Wed Sep 17 08:04:39 2014
+** Created: Wed Sep 17 15:58:44 2014
 **      by: Qt User Interface Compiler version 4.8.6
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
@@ -42,7 +42,7 @@ class Ui_MaintDialog
     if maintDialog.objectName.nil?
         maintDialog.objectName = "maintDialog"
     end
-    maintDialog.resize(731, 468)
+    maintDialog.resize(731, 491)
     @label_4 = Qt::Label.new(maintDialog)
     @label_4.objectName = "label_4"
     @label_4.geometry = Qt::Rect.new(32, 310, 108, 16)
@@ -72,7 +72,7 @@ class Ui_MaintDialog
     @calendarWidget.geometry = Qt::Rect.new(390, 10, 304, 166)
     @errorMsg = Qt::Label.new(maintDialog)
     @errorMsg.objectName = "errorMsg"
-    @errorMsg.geometry = Qt::Rect.new(20, 500, 701, 16)
+    @errorMsg.geometry = Qt::Rect.new(20, 460, 701, 16)
     @errorMsg.frameShape = Qt::Frame::Panel
     @errorMsg.frameShadow = Qt::Frame::Sunken
     @layoutWidget = Qt::Widget.new(maintDialog)

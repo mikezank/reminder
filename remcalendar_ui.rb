@@ -1,7 +1,7 @@
 =begin
 ** Form generated from reading ui file 'remcalendar.ui'
 **
-** Created: Sat Sep 13 12:22:46 2014
+** Created: Wed Sep 17 15:58:00 2014
 **      by: Qt User Interface Compiler version 4.8.6
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!

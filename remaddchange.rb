@@ -21,7 +21,7 @@ class ReminderAddChangeWindow < Qt::Dialog
   FREQINDEX  = {'D'=>0, 'W'=>1, 'M'=>2}
   
   slots 'onetime_clicked()', 'get_start_calendar()', 'get_end_calendar()', 'done_maintenance()',
-         'save_clicked()', 'repeat_changed(int)', 'noend_clicked()'
+         'save_clicked()', 'repeat_changed(int)', 'noend_clicked()' # defined on the form
   
   def initialize(arg)
     if arg.class == Date
@@ -96,6 +96,7 @@ class ReminderAddChangeWindow < Qt::Dialog
   end
   
   def onetime_clicked()
+    # if onetimeBox is clicked, hide the frequency type and amount input fields
     @ui.repeatSpin.setHidden(@ui.onetimeBox.isChecked)
     @ui.freqCombo.setHidden(@ui.onetimeBox.isChecked)
     @ui.repeatLabel.setHidden(@ui.onetimeBox.isChecked)
@@ -107,6 +108,7 @@ class ReminderAddChangeWindow < Qt::Dialog
   end
   
   def noend_clicked()
+    # if noendBox is clicked, hide the end date input fields
     @ui.enddateEdit.setHidden(@ui.noendBox.isChecked)
     @ui.endLabel.setHidden(@ui.noendBox.isChecked)
     unless @ui.noendBox.isChecked
@@ -123,6 +125,7 @@ class ReminderAddChangeWindow < Qt::Dialog
   end
   
   def repeat_changed(value)
+    # when frequency amount changes, adjust the labels to reflect single (Day) or multiple (Days)
     @ui.freqCombo.clear
     if value == 1
       @ui.freqCombo.insertItems(0, FREQSINGLES)
@@ -132,6 +135,7 @@ class ReminderAddChangeWindow < Qt::Dialog
   end
   
   def save_clicked()
+    # check for proper date range and presence of short text
     if not @ui.noendBox.isChecked
       if @ui.startdateEdit.date.to_rubydate > @ui.enddateEdit.date.to_rubydate
         errorline = 'Start Date cannot be after End Date'

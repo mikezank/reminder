@@ -204,7 +204,6 @@ class CalendarWindow < Qt::MainWindow
         end
       end
       button = create_button(task.short_text, color)
-      #button.setStyleSheet('text-align: left')
       button.setMenu(@taskmenu)
       @button_tasks[button] = task
       litem = Qt::ListWidgetItem.new(list)
@@ -219,7 +218,6 @@ class CalendarWindow < Qt::MainWindow
   
   def create_button(text, color)
     button = Qt::PushButton.new(text)
-    #button.setStyleSheet("QPushButton {background-color: #{color}}")
     button.setStyleSheet("text-align: left; background-color: #{color}")
     # when Task button is clicked lookup and save parent Reminder object associated with that Task
     button.connect(SIGNAL('pressed()')) {@selected_task = @button_tasks[button]}

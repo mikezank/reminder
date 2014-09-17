@@ -10,7 +10,7 @@ class RemlistWindow < Qt::Dialog
   
   NUM_COLS = 4
   
-  slots 'add_reminder()', 'change_reminder()', 'delete_reminder()'
+  slots 'add_reminder()', 'change_reminder()', 'delete_reminder()' # defined from buttons on the form
   
   def initialize(parent=nil)
     super
